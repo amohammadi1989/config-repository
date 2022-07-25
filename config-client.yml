@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      allow-override: true
+      override-none: true
+
+      -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin
