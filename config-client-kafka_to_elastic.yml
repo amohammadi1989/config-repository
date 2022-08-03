@@ -24,7 +24,22 @@ kafka-consumer-config:
   max-partition-fetch-bytes-default: 1048576
   max-partition-fetch-bytes-boost-factor: 1
   poll-timeout-ms: 150
-
+kafka-producer-config:
+  key-serializer-class: org.apache.kafka.common.serialization.StringSerializer
+  value-serializer-class: io.confluent.kafka.serializers.KafkaAvroSerializer
+  compression-type: snappy
+  ack: all
+  batch-size: 16384
+  batch-size-boost-factor: 100
+  liner-ms: 5
+  request-timeout-ms: 60000
+  retry-count: 5
+retry-config:
+  initial-interval-ms: 1000
+  max-interval-ms: 10000
+  multiplier: 2.0
+  maxAttempts: 3
+  sleep-time-ms: 10000
 retry-config:
   initial-interval-ms: 1000
   max-interval-ms: 10000
