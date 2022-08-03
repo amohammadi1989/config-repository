@@ -53,3 +53,8 @@ retry-config:
   sleep-time-ms: 10000
 server:
   port: 0
+elastic-config:
+  index-name: twitter-index
+  connection-url: http://elasticsearch:9200
+  connect-timeout-ms: 5000
+  socket-timeout-ms: 30000  
